@@ -1,4 +1,6 @@
 import React from "react";
+import { TextField, Button, Typography, Paper } from "@mui/material";
+
 import {
     Root,
     StyledPaper,
@@ -8,7 +10,20 @@ import {
 } from "./styles";
 
 const Form = () => {
-    return <h1>Form</h1>;
+    const handleSubmit = () => {
+        console.log("submit");
+    };
+
+    return (
+        <Paper className={ClassNames.paper}>
+            <form
+                autoComplete="off"
+                noValidate
+                className={ClassNames.form}
+                onSubmit={handleSubmit}
+            ></form>
+        </Paper>
+    );
 };
 
 export default Form;
