@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { MainContainer, SmMargin, ActionDiv } from "./styles";
 import { fetchEventPosts } from "../../features/eventpostsSlice";
 import EventPost from "./EventPost/EventPost";
-import { MainContainer, SmMargin, ActionDiv } from "./styles";
 
 const EventPosts = () => {
     const eventposts = useSelector((state) => state.eventposts);

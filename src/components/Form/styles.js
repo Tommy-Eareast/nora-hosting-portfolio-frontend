@@ -1,21 +1,18 @@
 import { styled } from "@mui/material/styles";
 import { Paper, Button } from "@mui/material";
 
-export const Root = styled("form")(({ theme }) => ({
-    "& .MuiTextField-root": {
-        margin: theme.spacing(1),
-    },
-}));
-
 export const StyledPaper = styled(Paper)(({ theme }) => ({
     padding: theme.spacing(2),
 }));
 
-export const StyledForm = styled("form")({
+export const StyledForm = styled("form")(({ theme }) => ({
     display: "flex",
     flexWrap: "wrap",
     justifyContent: "center",
-});
+    "& .MuiTextField-root": {
+        margin: theme.spacing(1),
+    },
+}));
 
 export const FileInput = styled("div")({
     width: "97%",
