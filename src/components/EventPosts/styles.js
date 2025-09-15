@@ -1,6 +1,7 @@
+import { Grid } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
-export const MainContainer = styled("div")({
+export const MainContainer = styled(Grid)({
     display: "flex",
     alignItems: "center",
 });

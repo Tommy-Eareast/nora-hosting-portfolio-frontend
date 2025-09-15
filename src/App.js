@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Container, Grow, Grid } from "@mui/material";
+import { Container, Fade, Grid } from "@mui/material";
 import { StyledAppBar, Heading, Icon } from "./styles";
 import { useDispatch } from "react-redux";
 
@@ -24,7 +24,7 @@ const App = () => {
                 <Icon src={hostingIcon} alt="hosting" height="60" />
             </StyledAppBar>
 
-            <Grow in>
+            <Fade in>
                 <Container>
                     <Grid
                         container
@@ -46,7 +46,7 @@ const App = () => {
                         </Grid>
                     </Grid>
                 </Container>
-            </Grow>
+            </Fade>
         </Container>
     );
 };

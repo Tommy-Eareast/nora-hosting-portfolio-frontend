@@ -9,20 +9,27 @@ export const fetchEventPosts = createAsyncThunk(
     }
 );
 
+export const createEventPost = createAsyncThunk(
+    "eventposts/create",
+    async (eventPost) => {
+        const { data } = await api.createEventPost(eventPost);
+        return data;
+    }
+);
+
 const eventpostsSlice = createSlice({
     name: "eventposts",
     initialState: [],
-    reducers: {
-        createPost: (state, action) => {
-            state.push(action.payload);
-        },
-    },
+    reducers: {},
     extraReducers: (builder) => {
-        builder.addCase(fetchEventPosts.fulfilled, (state, action) => {
-            return action.payload;
-        });
+        builder
+            .addCase(fetchEventPosts.fulfilled, (state, action) => {
+                return action.payload;
+            })
+            .addCase(createEventPost.fulfilled, (state, action) => {
+                state.push(action.payload);
+            });
     },
 });
 
-export const { createEventPost } = eventpostsSlice.actions;
 export default eventpostsSlice.reducer;

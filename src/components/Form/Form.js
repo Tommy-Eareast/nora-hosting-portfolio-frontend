@@ -1,9 +1,12 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import { FileUpload } from "./FileUpload";
 import { selectClasses, TextField, Typography } from "@mui/material";
 import { StyledPaper, StyledForm, FileInput, ButtonSubmit } from "./styles";
+import { createEventPost } from "../../features/eventpostsSlice";
 
 const Form = () => {
+    const dispatch = useDispatch();
     const [eventPostData, setEventPostData] = useState({
         organiser: "",
         title: "",
@@ -12,8 +15,9 @@ const Form = () => {
         selectedFile: "",
     });
 
-    const handleSubmit = () => {
-        console.log("submit");
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        dispatch(createEventPost(eventPostData));
     };
 
     const clear = () => {

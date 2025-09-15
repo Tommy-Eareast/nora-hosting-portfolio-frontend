@@ -1,8 +1,8 @@
 // styles/PostStyles.js
 import { styled } from "@mui/material/styles";
-import { Card } from "@mui/material";
+import { Card, CardMedia, Typography } from "@mui/material";
 
-export const Media = styled("div")({
+export const Media = styled(CardMedia)({
     height: 0,
     paddingTop: "56.25%", // 16:9 aspect ratio
     backgroundColor: "rgba(0, 0, 0, 0.5)",
@@ -50,7 +50,7 @@ export const Details = styled("div")({
     margin: "20px",
 });
 
-export const Title = styled("div")({
+export const Title = styled(Typography)({
     padding: "0 16px",
 });
 
